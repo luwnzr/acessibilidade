@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Landing page sobre Design Inclusivo e UX Acessível conforme diretrizes WCAG e W3C." />
+  <title>Design Inclusivo e UX Acessível</title>
+  <script>
+    function playAudioFeedback(message) {
+      const utterance = new SpeechSynthesisUtterance(message);
+      utterance.lang = "pt-BR";
+      speechSynthesis.speak(utterance);
+    }
+
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+    }
+
+    function toggleFontSize() {
+      document.body.classList.toggle('text-xl');
+    }
+
+    function toggleDaltonicMode() {
+      document.body.classList.toggle('daltonic');
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :focus {
+      outline: 3px solid #facc15;
+      outline-offset: 4px;
+    }
+    html.dark {
+      background-color: #111827;
+      color: #f9fafb;
+    }
+    html.dark header,
+    html.dark footer {
+      background-color: #1f2937;
+    }
+    html.dark nav {
+      background-color: #facc15;
+      color: #111827;
+    }
+    .daltonic {
+      filter: url("#protanopia") contrast(1.2);
+    }
+    .bg-cinza-medio {
+        background-color: #737373;
+    }
+  </style>
+  <!-- UserWay widget -->
+  <script>
+    (function(d){
+      var s = d.createElement("script");
+      s.setAttribute("data-account", "YOUR_USERWAY_ACCOUNT_ID");
+      s.setAttribute("src", "https://cdn.userway.org/widget.js");
+      (d.body || d.head).appendChild(s);
+    })(document);
+  </script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white font-sans transition-colors duration-300">
+  <svg width="0" height="0">
+    <filter id="protanopia">
+      <feColorMatrix in="SourceGraphic" type="matrix" values="0.567,0.433,0,0,0 0.558,0.442,0,0,0 0,0.242,0.758,0,0 0,0,0,1,0" />
+    </filter>
+  </svg>
+
+  <a href="#conteudo" class="sr-only focus:not-sr-only bg-yellow-300 text-black p-2">Pular para o conteúdo</a>
+
+  <header class="bg-blue-900 dark:bg-gray-800" role="banner">
+    <div class="w-full h-64 md:h-80 flex items-center justify-center">
+      <img src="img/banner.png" 
+           alt="Banner representando design inclusivo e acessibilidade digital" 
+           class="w-full h-full object-cover">
+    </div>
+  </header>
+
+  <nav class="bg-cinza-medio text-white p-4 text-lg flex justify-center space-x-6 dark:bg-cinza-medio" role="navigation">
+    <a href="#acessibilidade-web" class="hover:underline hover:text-yellow-300">Acessibilidade Web</a>
+    <a href="#tipografia" class="hover:underline hover:text-yellow-300">Tipografia</a>
+    <a href="#contraste" class="hover:underline hover:text-yellow-300">Contraste</a>
+    <a href="#design-responsivo" class="hover:underline hover:text-yellow-300">Design Responsivo</a>
+    <a href="#feedbacks" class="hover:underline hover:text-yellow-300">Feedbacks</a>
+    <a href="#personas" class="hover:underline hover:text-yellow-300">Personas</a>
+</nav>
+
+  <main class="p-6 space-y-12" role="main" id="conteudo">
+    <!-- Nova seção adicionada -->
+    <section id="acessibilidade-web" class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Acessibilidade na Web: Um Direito de Todos</h2>
+      <div class="space-y-4">
+        <p>A importância da acessibilidade e de igualar as oportunidades para todas as pessoas não é uma novidade. Essa é a função das rampas, dos pisos táteis e das informações em braille que vemos no mundo físico. No ambiente digital, essa necessidade é igualmente crucial.</p>
+        
+        <div class="bg-blue-50 p-4 rounded-lg dark:bg-gray-700">
+          <h3 class="text-xl font-semibold mb-2">Os números da acessibilidade no Brasil</h3>
+          <p>De acordo com a Organização Mundial de Saúde (OMS), existem <strong>45,6 milhões de pessoas brasileiras</strong> com algum tipo de deficiência. Isso equivale a quase <strong>25% da população</strong>, distribuídos em:</p>
+          <ul class="list-disc list-inside pl-4 mt-2 space-y-1">
+            <li><strong>18,6%</strong> com deficiência visual</li>
+            <li><strong>7%</strong> com deficiência motora</li>
+            <li><strong>5,1%</strong> com deficiência auditiva</li>
+            <li><strong>1,4%</strong> com deficiência intelectual</li>
+          </ul>
+        </div>
+        
+        <p>Nesse contexto, surge uma questão importante: <strong>como fica o acesso à internet por todas as pessoas?</strong> Muitos sites e aplicativos ainda apresentam barreiras que excluem parte significativa da população.</p>
+        
+        <p>A acessibilidade na web traz a possibilidade de todas as pessoas poderem acessar um site sem dificuldades, independentemente de suas capacidades físicas, motoras, sensoriais ou cognitivas. Ela se baseia em quatro princípios fundamentais (POUR):</p>
+        
+        <div class="grid md:grid-cols-2 gap-4 mt-4">
+          <div class="bg-yellow-50 p-4 rounded-lg dark:bg-gray-700">
+            <h4 class="font-bold">Perceptível</h4>
+            <p>A informação deve ser apresentada de forma que o usuário possa percebê-la, através de múltiplos sentidos quando necessário.</p>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg dark:bg-gray-700">
+            <h4 class="font-bold">Operável</h4>
+            <p>A interface deve ser utilizável através de diferentes métodos de entrada (mouse, teclado, voz, etc.).</p>
+          </div>
+          <div class="bg-blue-50 p-4 rounded-lg dark:bg-gray-700">
+            <h4 class="font-bold">Compreensível</h4>
+            <p>O conteúdo e a operação da interface devem ser claros e previsíveis.</p>
+          </div>
+          <div class="bg-purple-50 p-4 rounded-lg dark:bg-gray-700">
+            <h4 class="font-bold">Robusto</h4>
+            <p>O conteúdo deve ser compatível com diferentes tecnologias assistivas, atuais e futuras.</p>
+          </div>
+        </div>
+        
+        <p class="mt-4">A internet é para todas as pessoas e o acesso à informação é um direito universal. Garantir a acessibilidade digital não é apenas uma questão de inclusão social, mas também:</p>
+        <ul class="list-disc list-inside pl-4 space-y-1">
+          <li>Um requisito legal em muitos países</li>
+          <li>Um fator de melhor posicionamento em mecanismos de busca</li>
+          <li>Uma experiência melhor para todos os usuários</li>
+          <li>Um mercado potencial de milhões de consumidores</li>
+        </ul>
+        
+        <p class="mt-4 font-semibold">Nos tópicos a seguir, exploraremos como implementar essas práticas de acessibilidade em projetos web, desde a tipografia até o design de interações inclusivas.</p>
+      </div>
+    </section>
+
+
+  <main class="p-6 space-y-12" role="main" id="conteudo">
+    <section id="tipografia" class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Tipografia Acessível</h2>
+      <p class="mb-4">A escolha da tipografia é crucial para a acessibilidade. Algumas boas práticas incluem:</p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Fontes sem serifa (como Arial, Helvetica) são mais legíveis em telas</li>
+        <li>Tamanho mínimo de 16px para o corpo do texto</li>
+        <li>Altura de linha de pelo menos 1.5 vezes o tamanho da fonte</li>
+        <li>Evitar textos justificados e itálicos em excesso</li>
+        <li>Permitir o redimensionamento do texto sem quebrar o layout</li>
+      </ul>
+    </section>
+
+    <section id="contraste" class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Contraste e Cores Acessíveis</h2>
+      <p class="mb-4">O contraste adequado entre texto e fundo é essencial para usuários com baixa visão:</p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Razão de contraste mínimo de 4.5:1 para texto normal (WCAG AA)</li>
+        <li>7:1 para texto pequeno (abaixo de 18px) ou texto em negrito abaixo de 14px</li>
+        <li>Evitar combinações como verde/vermelho que dificultam a distinção para daltônicos</li>
+        <li>Não usar apenas cor para transmitir informação (complementar com ícones ou padrões)</li>
+        <li>Ferramentas como o Color Contrast Analyzer ajudam a verificar combinações</li>
+      </ul>
+    </section>
+
+    <section id="design-responsivo" class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Design Responsivo e Acessível</h2>
+      <p class="mb-4">Um design que se adapta a diferentes dispositivos e necessidades:</p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Layout flexível que funciona em telas de 320px até 4K</li>
+        <li>Áreas de toque mínimas de 44x44px para dispositivos móveis</li>
+        <li>Orientação vertical e horizontal funcionais</li>
+        <li>Zoom de até 200% sem perda de conteúdo ou funcionalidade</li>
+        <li>Media queries para ajustar espaçamentos em telas pequenas</li>
+        <li>Testar com leitores de tela em diferentes dispositivos</li>
+      </ul>
+    </section>
+
+    <section id="feedbacks" class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Feedbacks Visuais e Auditivos</h2>
+      <p class="mb-4">Múltiplos canais de feedback garantem que todos os usuários compreendam as interações:</p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Feedback visual para ações (mudança de cor, animações suaves)</li>
+        <li>Feedback auditivo para usuários com deficiência visual (como implementado nos botões deste site)</li>
+        <li>Mensagens de erro claras com sugestões de correção</li>
+        <li>Indicadores de foco visíveis para navegação por teclado</li>
+        <li>Estado dos elementos (selecionado, ativo, desativado) claramente diferenciados</li>
+        <li>Tempo suficiente para ler mensagens ou concluir ações</li>
+      </ul>
+    </section>
+
+    <section id="personas" class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-bold mb-4">Personas com Barreiras e Fluxos Acessíveis</h2>
+      <p class="mb-4">Personas ajudam a entender as necessidades reais dos usuários:</p>
+      
+      <div class="grid md:grid-cols-2 gap-6 mt-6">
+        <div class="bg-gray-100 p-4 rounded-lg dark:bg-gray-700">
+          <h3 class="text-xl font-semibold mb-2">João, 62 anos</h3>
+          <p>Baixa visão, usa leitor de tela e ampliador. Dificuldade com pequenos textos e baixo contraste.</p>
+          <p class="mt-2 font-medium">Necessidades:</p>
+          <ul class="list-disc list-inside pl-4">
+            <li>Texto redimensionável</li>
+            <li>Alto contraste</li>
+            <li>Navegação por teclado</li>
+            <li>Alternativas textuais</li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-100 p-4 rounded-lg dark:bg-gray-700">
+          <h3 class="text-xl font-semibold mb-2">Ana, 34 anos</h3>
+          <p>Daltonismo (protanopia), dificuldade em distinguir vermelho/verdez.</p>
+          <p class="mt-2 font-medium">Necessidades:</p>
+          <ul class="list-disc list-inside pl-4">
+            <li>Indicadores além de cor</li>
+            <li>Padrões ou texturas em gráficos</li>
+            <li>Bom contraste luminoso</li>
+            <li>Modo daltônico</li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-100 p-4 rounded-lg dark:bg-gray-700">
+          <h3 class="text-xl font-semibold mb-2">Carlos, 40 anos</h3>
+          <p>Deficiência motora, usa apenas teclado ou comando de voz.</p>
+          <p class="mt-2 font-medium">Necessidades:</p>
+          <ul class="list-disc list-inside pl-4">
+            <li>Navegação completa por teclado</li>
+            <li>Áreas de clique amplas</li>
+            <li>Atalhos de teclado</li>
+            <li>Tempo extra para interações</li>
+          </ul>
+        </div>
+        
+        <div class="bg-gray-100 p-4 rounded-lg dark:bg-gray-700">
+          <h3 class="text-xl font-semibold mb-2">Mariana, 28 anos</h3>
+          <p>Epilepsia fotossensível, sensível a animações bruscas.</p>
+          <p class="mt-2 font-medium">Necessidades:</p>
+          <ul class="list-disc list-inside pl-4">
+            <li>Opção para reduzir animações</li>
+            <li>Sem flashes acima de 3Hz</li>
+            <li>Transições suaves</li>
+            <li>Controle sobre vídeos automáticos</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-8">
+        <h3 class="text-xl font-semibold mb-4">Fluxos Acessíveis</h3>
+        <p>Projetar fluxos de navegação considerando:</p>
+        <ul class="list-disc list-inside space-y-2 mt-2">
+          <li>Ordem lógica de tabulação</li>
+          <li>Rótulos claros para formulários</li>
+          <li>Alternativas para CAPTCHAs</li>
+          <li>Múltiplas formas de acesso ao conteúdo (menu, busca, mapa do site)</li>
+          <li>Tempo ajustável para sessões expiráveis</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-cinza-medio text-white text-center p-4 dark:bg-gray-800" role="contentinfo">
+    <p>&copy; 2025 Grupo Emilly, Luane, Maria Beatriz - UX Acessível</p>
+    <div class="mt-2">
+      <h3 class="font-semibold">Referências Essenciais:</h3>
+      <ul class="flex flex-wrap justify-center gap-4 mt-2">
+        <li><a href="https://www.w3.org/WAI/" class="text-yellow-300 underline" target="_blank" rel="noopener noreferrer">W3C WAI</a></li>
+        <li><a href="https://www.w3.org/TR/WCAG21/" class="text-yellow-300 underline" target="_blank" rel="noopener noreferrer">WCAG 2.1</a></li>
+        <li><a href="https://wave.webaim.org/" class="text-yellow-300 underline" target="_blank" rel="noopener noreferrer">WAVE Tool</a></li>
+        <li><a href="https://www.a11yproject.com/" class="text-yellow-300 underline" target="_blank" rel="noopener noreferrer">A11Y Project</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
